@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Angel Sola",
+  "classifications": [ "HostedService" ],
+  "name": "Nice.HostedService.Console.App",
+  "defaultName": "HostedService.Console.app",
+  "identity": "Tixone.Nice.HostedService.Console.App",
+  "shortName": "nchsapp",
+  "tags": {
+    "language": "C#",
+    "type": "project",
+    "version": "net core 5.0",
+    "description": "Project template for creating a nice async .NET Core HostedService console app. With a simple http service as demo"
+  },
+  "sourceName": "ncwsapp",
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net5.0",
+          "description": "Target net5.0"
+        }
+      ],
+      "replaces": "net5.0",
+      "defaultValue": "net5.0"
+    },
+    "AuthorName": {
+      "type": "parameter",
+      "defaultValue": "Angel Sola",
+      "replaces": "Angel Sola",
+      "datatype": "text",
+      "description": "Angel Sola"
+    },
+    "Description": {
+      "type": "parameter",
+      "description": "Project template for creating a nice async .NET Core HostedService console app. With a simple http service as demo",
+      "defaultValue": "Project template for creating a nice async .NET Core HostedService console app. With a simple http service as demo",
+      "replaces": "DescriptionContent"
+    }
+  }
+}

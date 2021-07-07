@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.223
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nchsapp", "src\Content\Application\nchsapp.csproj", "{EAEAE1ED-877A-4368-A598-7CEB08F1D12A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CCE2A759-059C-4011-BFF9-2A54544EF4B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "template files", "template files", "{DC8F2A52-A269-406D-AB0D-99F56CA16CB4}"
+	ProjectSection(SolutionItems) = preProject
+		src\Content\Application\.template.config\template.json = src\Content\Application\.template.config\template.json
+		src\tixone.Template.NetCore.HostedService.nuspec = src\tixone.Template.NetCore.HostedService.nuspec
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAEAE1ED-877A-4368-A598-7CEB08F1D12A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAEAE1ED-877A-4368-A598-7CEB08F1D12A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAEAE1ED-877A-4368-A598-7CEB08F1D12A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAEAE1ED-877A-4368-A598-7CEB08F1D12A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EAEAE1ED-877A-4368-A598-7CEB08F1D12A} = {CCE2A759-059C-4011-BFF9-2A54544EF4B7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD82D64E-1D9D-488B-AEF6-9953E1534064}
+	EndGlobalSection
+EndGlobal
