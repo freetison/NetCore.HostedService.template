@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 
-namespace ncwsapp.Services
+namespace nchsapp.Services
 {
     public interface IHttpService
     {

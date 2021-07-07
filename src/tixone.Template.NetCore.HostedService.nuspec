@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Tixone.NetCore.HostedService.App.Template.nuspec</id>
-		<version>1.0.2</version>
+		<version>1.0.3</version>
 		<description>
 			Project template for creating a nice async .NET Core HostedService console app. With a simple http service as demo.
 		</description>

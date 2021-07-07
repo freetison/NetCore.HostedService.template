@@ -12,7 +12,7 @@
     "version": "net core 5.0",
     "description": "Project template for creating a nice async .NET Core HostedService console app. With a simple http service as demo"
   },
-  "sourceName": "ncwsapp",
+  "sourceName": "nchsapp",
   "symbols": {
     "Framework": {
       "type": "parameter",

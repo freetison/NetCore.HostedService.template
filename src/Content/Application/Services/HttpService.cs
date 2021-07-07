@@ -3,11 +3,10 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
-using ncwsapp.DependencyInjection;
-using Polly;
+using nchsapp.DependencyInjection;
 using RestSharp;
 
-namespace ncwsapp.Services
+namespace nchsapp.Services
 {
     public class HttpService : IHttpService
     {
