@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
-using ncwsapp.Services;
+using nchsapp.Services;
 using RestSharp;
 
-namespace ncwsapp.DependencyInjection
+namespace nchsapp.DependencyInjection
 {
     public static class ServiceExtensions
     {

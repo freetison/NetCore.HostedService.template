@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ncwsapp.DependencyInjection;
-using ncwsapp.Models;
-using ncwsapp.Services;
+using nchsapp.DependencyInjection;
+using nchsapp.Models;
+using nchsapp.Services;
 
-namespace ncwsapp
+namespace nchsapp
 {
     public class Startup
     {

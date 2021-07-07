@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using RestSharp.Authenticators;
 
-namespace ncwsapp.DependencyInjection
+namespace nchsapp.DependencyInjection
 {
     public class HttpServiceOptions
     {

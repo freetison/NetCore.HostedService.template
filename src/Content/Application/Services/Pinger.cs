@@ -4,9 +4,8 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Polly;
 
-namespace ncwsapp.Services
+namespace nchsapp.Services
 {
     public class Pinger
     {

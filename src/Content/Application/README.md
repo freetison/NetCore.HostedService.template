@@ -10,3 +10,5 @@ Polly implementation.
 Pinger Class to ping any address.
 Serilog implementation
 
+Package Generation
+nuget.exe pack tixone.Template.NetCoreConsole.nuspec -OutputDirectory \nuget

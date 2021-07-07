@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Net;
-using System.Net.NetworkInformation;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
-using ncwsapp.Services;
+using nchsapp.Services;
 using Polly;
 using Serilog;
 
-namespace ncwsapp
+namespace nchsapp
 {
     public class HostedServiceApp : IHostedService
     {

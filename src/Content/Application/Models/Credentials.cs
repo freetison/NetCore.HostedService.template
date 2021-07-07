@@ -1,4 +1,4 @@
-﻿namespace ncwsapp.Models
+﻿namespace nchsapp.Models
 {
     public class Credentials
     {
