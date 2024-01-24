@@ -8,7 +8,7 @@ Console app with DI example.
 HttpService as example.
 Polly implementation.
 Pinger Class to ping any address.
-Serilog implementation
+
 
 Package Generation
-nuget.exe pack tixone.Template.NetCoreConsole.nuspec -OutputDirectory \nuget
+nuget.exe pack nuget.exe pack tixone.Template.NetCore.HostedService.nuspec -OutputDirectory \nuget

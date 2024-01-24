@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace nchsapp.Services
 {
-    public class Pinger
+    public class Pinger: IDisposable
     {
         public string Result = String.Empty;
 
@@ -33,6 +33,11 @@ namespace nchsapp.Services
             return await _pinger.SendPingAsync(address, Timeout, buffer, _options).ContinueWith(replay => replay.Result.Status);
         }
 
+        public void Dispose()
+        {
+            _pinger.Dispose();
+            _waiter.Dispose();
+        }
     }
 
 }

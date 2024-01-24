@@ -1,54 +1,35 @@
 ﻿using System;
-using System.IO;
-using System.Threading.Tasks;
+using Flurl.Http.Configuration;
+
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Serilog;
+using nchsapp;
+using nchsapp.Services;
 
-namespace nchsapp
-{
-    class Program
+
+IHostBuilder builder = Host.CreateDefaultBuilder(args);
+builder
+    .UseEnvironment(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development")
+    .ConfigureAppConfiguration((hostingContext, config) =>
     {
-        private static string _env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+        var env = hostingContext.HostingEnvironment;
+        config.AddEnvironmentVariables();
+        config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+        config.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: false, reloadOnChange: true);
+    })
+    .ConfigureServices((hostContext, services) =>
+    {
+        services.AddLogging();
+        services.AddSingleton(sp => 
+                    new FlurlClientCache().Add("GoogleClient", "8.8.8.8"));
+        services.AddTransient(sp => ActivatorUtilities.CreateInstance<Pinger>(sp));
+        services.AddTransient<IGoogleService, GoogleService>(sp => ActivatorUtilities.CreateInstance<GoogleService>(sp));
+        services.AddHostedService<WorkerService>();
+        
+    });
 
-        static async Task<int> Main(string[] args)
-        {
-            try
-            {
-                await CreateHostBuilder(args).Build().RunAsync();
-                return 0;
-            }
-            catch (Exception ex)
-            {
-                Log.Fatal(ex, $"There was a problem");
-                return 1;
-            }
-        }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) => Host
-            .CreateDefaultBuilder(args)
-            .UseEnvironment(_env)
-            .ConfigureAppConfiguration((hostingContext, config) =>
-            {
-                config.SetBasePath(Directory.GetCurrentDirectory());
-                config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-                config.AddJsonFile($"appsettings.{_env}.json", optional: false, reloadOnChange: true);
-                config.AddEnvironmentVariables();
-                if (args != null) { config.AddCommandLine(args); }
+IHost host = builder.Build();
+host.Run();
 
-                config.Build();
-
-            })
-            .ConfigureServices((hostContext, services) => new Startup(hostContext.Configuration).ConfigureServices(services))
-            .UseSerilog((ctx, cfg) =>
-            {
-                cfg.ReadFrom.Configuration(ctx.Configuration)
-                    .Enrich.WithMachineName()
-                    .Enrich.WithProperty("Application", ctx.Configuration.GetValue<string>("ApplicationSettings:App"))
-                    .Enrich.WithProperty("Version", ctx.Configuration.GetValue<string>("ApplicationSettings:Version"))
-                    .Enrich.WithProperty("Environment", ctx.HostingEnvironment.EnvironmentName)
-                    .Enrich.FromLogContext();
-
-            });
-    }
-}

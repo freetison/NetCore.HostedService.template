@@ -9,7 +9,7 @@
   "tags": {
     "language": "C#",
     "type": "project",
-    "version": "net core 5.0",
+    "version": "Net 8.0",
     "description": "Project template for creating a nice async .NET Core HostedService console app. With a simple http service as demo"
   },
   "sourceName": "nchsapp",
@@ -20,12 +20,12 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "net5.0",
-          "description": "Target net5.0"
+          "choice": "net8.0",
+          "description": "Target net8.0"
         }
       ],
-      "replaces": "net5.0",
-      "defaultValue": "net5.0"
+      "replaces": "net8.0",
+      "defaultValue": "net8.0"
     },
     "AuthorName": {
       "type": "parameter",
